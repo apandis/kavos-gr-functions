@@ -40,7 +40,7 @@ interface ResponseData {
  * Simple notification processor for cruise inquiries
  */
 
-export async function notificationProcessor(
+export async function NotificationProcessor(
   request: HttpRequest,
   context: InvocationContext
 ): Promise<HttpResponseInit> {
@@ -93,8 +93,8 @@ export async function notificationProcessor(
 }
 
 // Register the HTTP function
-app.http("notificationProcessor", {
+app.http("NotificationProcessor", {
   methods: ["POST"],
   authLevel: "anonymous", // Change to "function" for production
-  handler: notificationProcessor,
+  handler: NotificationProcessor,
 });
